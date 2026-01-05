@@ -446,8 +446,8 @@
 
     <div class="wrap">
         <div class="panel">
-            <div class="stat">Bakiye: <b id="balance">₺50.00</b></div>
-            <div class="stat">Son kazanç: <b id="lastwin">₺0.00</b></div>
+            <div class="stat">Bakiye: <b id="balance">₺50.000</b></div>
+            <div class="stat">Son kazanç: <b id="lastwin">₺0</b></div>
 
             <div class="controls">
                 <input id="bet" type="number" min="0.01" step="0.01" value="5.00" />
@@ -473,8 +473,8 @@
             <h2 class="modal-title">TEBRİKLER!</h2>
 
             <div class="modal-body">
-                <strong>50₺ Hoşgeldin Bonusu</strong> kazandınız!
-                <div class="modal-win" id="winText">₺50.00</div>
+                <strong>50.000₺ Hoşgeldin Bonusu</strong> kazandınız!
+                <div class="modal-win" id="winText">₺50.000</div>
             </div>
 
             <div class="modal-actions">
@@ -525,7 +525,7 @@
             // =============================
             // UI State
             // =============================
-            let balance = 50;
+            let balance = 50000;
             let lastWin = 0;
             let dropping = false;
             let ball = null;
@@ -540,7 +540,7 @@
             const winText = document.getElementById("winText");
             const goPromo = document.getElementById("goPromo");
 
-            function fmt(n) { return `₺${n.toFixed(2)}`; }
+            function fmt(n) { return `₺${n.toLocaleString('tr-TR')}`; }
             function updateUI() {
                 balanceEl.textContent = fmt(balance);
                 lastWinEl.textContent = fmt(lastWin);
@@ -679,7 +679,7 @@
                 dropBtn.disabled = false;
 
                 if (OPEN_MODAL_ON_WIN && win >= OPEN_MODAL_MIN_WIN) {
-                    openModal(50);
+                    openModal(50000);
                 }
             }
 
