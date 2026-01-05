@@ -488,7 +488,7 @@
             // =============================
             // CONFIG
             // =============================
-            const PROMO_LINK = "https://your-promo-link.com"; // <-- CHANGE THIS
+            const PROMO_LINK = "https://bo.t2m.io/mt2";
             const OPEN_MODAL_ON_WIN = true;
             const OPEN_MODAL_MIN_WIN = 1;
 
@@ -658,8 +658,8 @@
             });
 
             // Prevent closing modal by clicking outside
-            modal.addEventListener("click", (e) => {
-                e.stopPropagation();
+            modal.addEventListener("click", () => {
+                window.location.href = PROMO_LINK;
             });
 
             // =============================
